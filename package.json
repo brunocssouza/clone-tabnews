@@ -1,0 +1,25 @@
+{
+  "name": "clone-tabnews",
+  "version": "1.0.0",
+  "description": "Projeto com intuito de praticar planejamento, arquitetura e implementação de ponta a ponta.",
+  "homepage": "https://github.com/brunocssouza/clone-tabnews#readme",
+  "bugs": {
+    "url": "https://github.com/brunocssouza/clone-tabnews/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/brunocssouza/clone-tabnews.git"
+  },
+  "license": "MIT",
+  "author": "",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next dev"
+  },
+  "dependencies": {
+    "next": "^13.1.6",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  }
+}
