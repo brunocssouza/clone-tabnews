@@ -3,5 +3,5 @@ services:
     image: "postgres:alpine3.23" # Buscar, em Docker Hub, uma imagem do SGBD escolhido.
     ports:
       - "5432:5432" # Inserir a porta do SGBD escolhido.
-    environment:
-      POSTGRES_PASSWORD: "local_password" # Inserir qual será a senha de acesso do SGBD escolhido.
+    env_file:
+      - ../.env
