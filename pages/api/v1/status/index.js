@@ -5,15 +5,14 @@ export default async function status(request, response) {
 
   // Database
   const dbVersion = await database.query("SHOW server_version;");
-  const dbVersionValue = dbVersion.rows[0].server_version;
+  const dbVersionValue = dbVersion.rows[0].server_version.split(" ")[0];
 
   const dbMaxConnections = await database.query("SHOW max_connections;");
   const dbMaxConnectionsValue = dbMaxConnections.rows[0].max_connections;
 
-  const dbName = process.env.POSTGRES_DB;
   const dbOpenedConnections = await database.query({
     text: "SELECT count(*) FROM pg_stat_activity WHERE datname = $1;",
-    values: [dbName],
+    values: [process.env.POSTGRES_DB],
   });
   const dbOpenedConnectionsValue = dbOpenedConnections.rows[0].count;
 
