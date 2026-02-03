@@ -4,4 +4,4 @@ services:
     ports:
       - "5432:5432" # Inserir a porta do SGBD escolhido.
     env_file:
-      - ../.env
+      - ../.env.development
