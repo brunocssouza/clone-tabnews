@@ -1,9 +1,8 @@
-import database from "infra/database";
+const database = require("infra/database");
 
-export default async function status(request, response) {
+async function status(request, response) {
   const updatedAt = new Date().toISOString();
 
-  // Database
   const dbVersion = await database.query("SHOW server_version;");
   const dbVersionValue = dbVersion.rows[0].server_version.split(" ")[0];
 
@@ -27,3 +26,5 @@ export default async function status(request, response) {
     },
   });
 }
+
+module.exports = status;
